@@ -1,11 +1,22 @@
-name: 'Your name here'
-description: 'Provide a description here'
-author: 'Your name or organization here'
+name: 'PR Comment'
+description: 'Post a comment on PR'
+author: '4afS'
+
 inputs:
-  milliseconds: # change this
+  repo-token:
+    description: 'GITHUB_TOKEN secret'
     required: true
-    description: 'input description here'
-    default: 'default value if applicable'
+  message:
+    description: 'Message to comment'
+    required: true
+
+outputs:
+  comment-url:
+    description: 'The PR comment URL'
+
 runs:
   using: 'node12'
   main: 'dist/index.js'
+branding:
+  icon: 'message-square'
+  color: 'green'
